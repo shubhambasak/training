@@ -12,17 +12,17 @@ public class BinarySearch {
 
         System.out.print("Enter the elements: ");
         int[] arr = new int[n];
-        for(int i = 0; i<n; i++) arr[i] = sc.nextInt();
+        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
 
         Arrays.sort(arr);
         System.out.print("What is your Target? (Enter the number): ");
         int target = sc.nextInt();
         int index = -1;
         int left = 0, right = n - 1;
-        while(left <= right){
+        while (left <= right) {
             int mid = (left + right) / 2;
-            if(target > arr[mid]) left = mid + 1;
-            else if(target < arr[mid]) right = mid - 1;
+            if (target > arr[mid]) left = mid + 1;
+            else if (target < arr[mid]) right = mid - 1;
             else {
                 index = mid;
                 break;
@@ -30,16 +30,16 @@ public class BinarySearch {
         }
 
 
-        if(index == -1) System.out.println("Target not found.");
+        if (index == -1) System.out.println("Target not found.");
         else System.out.println("Target found at index " + index);
 
         int max = 0;
         int min = 1000000;
-        for(int i = 0; i<n; i++){
-            if(max<arr[i]){
+        for (int i = 0; i < n; i++) {
+            if (max < arr[i]) {
                 max = arr[i];
             }
-            if(min>arr[i]){
+            if (min > arr[i]) {
                 min = arr[i];
             }
         }
